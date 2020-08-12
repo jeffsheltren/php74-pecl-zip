@@ -17,7 +17,7 @@
 %global ini_name  40-%{pecl_name}.ini
 %global php       php74
 
-%global upstream_version 1.18.2
+%global upstream_version 1.19.0
 #global upstream_prever  RC6
 
 Summary:      A ZIP archive management extension
@@ -31,7 +31,7 @@ URL:          https://pecl.php.net/package/zip
 Source0:      https://pecl.php.net/get/%{pecl_name}-%{upstream_version}%{?upstream_prever}.tgz
 
 BuildRequires: %{php}-devel
-BuildRequires: pkgconfig(libzip) >= 1.0.0
+BuildRequires: pkgconfig(libzip) >= 1.7.0
 BuildRequires: zlib-devel
 # build require pear1's dependencies to avoid mismatched php stacks
 BuildRequires: pear1 %{php}-cli %{php}-common %{php}-xml
@@ -190,6 +190,10 @@ fi
 
 
 %changelog
+* Wed Aug 12 2020 Jeff Sheltren <jeff@tag1consulting.com> - 1.19.0-1
+- Update to 1.19.0
+- Require libzip >= 1.7.0 (IUS package libzip5) for newer zip functions
+
 * Tue Apr 28 2020 David Alger <davidmalger@gmail.com> - 1.18.2-1
 - Port from Fedora to IUS
 
